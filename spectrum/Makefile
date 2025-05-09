@@ -32,6 +32,7 @@ $(TARGET): $(CPP_OBJECTS) $(CU_OBJECTS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(MOC_DIR)/%.moc.cpp: $(INCLUDE_DIR)/%.h
+	-mkdir -p moc
 	$(MOC) $< -o $@
 
 %.o: %.cu
